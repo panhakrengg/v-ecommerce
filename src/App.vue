@@ -1,26 +1,28 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <h1 class="text-3xl font-bold underline">
+    Hello world!
+  </h1>
+  <DarkMode />
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import DarkMode from './components/DarkMode.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
-  }
+    DarkMode,
+  },
 }
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+html.dark {
+  color-scheme: dark;
+  transition: color-scheme all 0.5ms;
+}
+
+body {
+  @apply: bg-slate-50 text-slate-800 dark:bg-slate-800 dark:text-slate-50;
 }
 </style>
